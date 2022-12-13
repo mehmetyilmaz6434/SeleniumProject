@@ -22,6 +22,11 @@ public class Day_02WebDriverManager {
         //close
         driver.close();
 
+        //This is second commit
+        String str="Hello guys";
+
+
+
     }
 
 }
