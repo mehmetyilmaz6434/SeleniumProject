@@ -8,13 +8,14 @@ public class Firstclass {
     public static void main(String[] args) {
 
         //1)Setting the path for chromedriver
-        //System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver");
+        //System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
 
-        //2)Create chorome driver
+        //2)Create chrome driver
         WebDriver driver =new ChromeDriver();
 
         //3)Write your test cases
         driver.get("https://www.techproeducation.com");
+
 
 
     }
