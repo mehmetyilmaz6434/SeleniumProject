@@ -46,8 +46,6 @@ public class Day07_WindowHandle extends TestBase {
                 driver.switchTo().window(eachHandle);//then switch the window 2
             }
         }
-        //        Then user verifies the new window title is “New Window”
-
 
         //        Then user verifies the text:  “New Window”
         //        When user goes back to the previous window and then verifies the title : “The Internet”

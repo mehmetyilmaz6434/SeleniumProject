@@ -37,7 +37,7 @@ public class Day04_LinkText {
         //Click on LMS LOGIN,
         driver.findElement(By.linkText("LMS LOGIN")).click();//linkText() method and partialLinkText() methods are case sensitive.
 
-        //Assert that LMS page is visible
+        //Assert that LMS page is visible  (we see the current url for assertion)
         String expectedUrl="https://lms.techproeducation.com/";
         String actualUrl=driver.getCurrentUrl();
 

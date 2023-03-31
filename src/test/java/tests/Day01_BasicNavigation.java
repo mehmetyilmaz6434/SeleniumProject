@@ -8,7 +8,7 @@ public class Day01_BasicNavigation {
         //Step 1:Set Up
        // System.setProperty("webdriver.chrome.driver","./src/resources/drivers/chromedriver.exe");
 
-        //step 2:Create
+        //step 2:Create type of driver
         WebDriver driver=new ChromeDriver();
         //Step 3:Write test scripts
 
@@ -23,7 +23,7 @@ public class Day01_BasicNavigation {
         driver.get("https://www.amazon.com/");//    firstly it opens walmart page then amazon page.
         driver.navigate().to("https://www.amazon.com/");
 
-        //Navigate back to google
+        //Navigate back to walmart
         driver.navigate().back();//      it opens walmart==>amazon==>walmart
 
         // Navigate forward to amazon
@@ -34,7 +34,7 @@ public class Day01_BasicNavigation {
 
         //Close/Quit the browser
         driver.close();// or "driver.quit();"
-        //Note: if we use "close()" the all wimdows will closed.otherwise with quit() only the last window will closed.
+        //Note: if we use "quit()" the all wimdows will closed.otherwise with "close()" only the last window will closed.
 
 
 

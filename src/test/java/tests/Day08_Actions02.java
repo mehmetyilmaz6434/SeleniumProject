@@ -28,13 +28,14 @@ public class Day08_Actions02 extends TestBase {
 
        // Hover over "Hover Div"
         Actions actions=new Actions(driver);
-        WebElement hoverDiv=driver.findElement(By.id("hoverdivpara"));
+        WebElement hoverDiv=driver.findElement(By.id("hoverdivpara"));//mouse'yi sürükleyeceğimiz alan tespit edildi
         Thread.sleep(2000);
-        actions.moveToElement(hoverDiv).perform();
+        actions.moveToElement(hoverDiv).perform();//mouse'yi üzerine getirme işlemi yapıldı.
 
         //Click on “Can you click me?” link.
         Thread.sleep(2000);
-        driver.findElement(By.id("hoverlink")).click();
+        driver.findElement(By.id("hoverlink")).click();//üzerine geldiğimiz alanda click yapılacak link çıktı. one locate yaptık,
+                                                       // ve tıkladık.
 
         //Verify the text "Action Complete".
       String actionCompleteRest= driver.findElement(By.xpath("//h1")).getText();

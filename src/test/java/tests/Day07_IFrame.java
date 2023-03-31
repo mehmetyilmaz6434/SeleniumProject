@@ -22,6 +22,7 @@ public class Day07_IFrame extends TestBase {
 
 
         // NOTE: textbox is in the iframe so we have to switch to the iframe.
+        //GETTING IN THE IFRAME
         driver.switchTo().frame(0);                                                               //1)Index
         driver.switchTo().frame("mce_0_ifr");                                                  //2)By id name
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));//3)By WebElement
@@ -34,6 +35,7 @@ public class Day07_IFrame extends TestBase {
 
         //        Type “This text box is inside the iframe”
         box.sendKeys("This text box is inside the iframe");
+
         //        SO FAR DRIVER IS IN THE IFRAME BUT Elemental Selenium text IS OUTSIDE OF THE FRAME
         //        GETTING OUT OF THE FRAME
         driver.switchTo().parentFrame();//"Elemental Selenium" u görebilmek için bo kod ile frame dışına çıkıyoruz.

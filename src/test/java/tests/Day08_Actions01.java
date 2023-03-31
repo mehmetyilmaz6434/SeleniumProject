@@ -36,7 +36,7 @@ public class Day08_Actions01 extends TestBase {
 
         //Verify the alert message is “You selected a context menu”
         Thread.sleep(2000);
-        String alertTest= driver.switchTo().alert().getText();
+        String alertTest= driver.switchTo().alert().getText();//getText() method returns web element as a string.
 
        assertEquals("You selected a context menu",alertTest);
 

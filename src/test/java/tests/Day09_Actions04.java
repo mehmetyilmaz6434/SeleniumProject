@@ -44,12 +44,6 @@ public class Day09_Actions04 extends TestBase {
 
          */
 
-
-
-
-
-
-
     }
     @Test
     public void clickAndHoldTest() throws InterruptedException {

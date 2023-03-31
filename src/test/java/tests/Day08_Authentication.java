@@ -21,6 +21,7 @@ public class Day08_Authentication extends TestBase {
         driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
 
         //Assertion
+        assertTrue(driver.findElement(By.xpath("//h3")).getText().contains("Basic Auth"));
 
     }
 

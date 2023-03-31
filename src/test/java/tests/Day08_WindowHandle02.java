@@ -50,7 +50,7 @@ String techProWindowHandle=driver.getWindowHandle();
 
 //    Open "https://www.amazon.com" on a NEW window 2  ==>diğer sayfa açıkken başka bir sayfa switchTo() methodu ile yapılıyor.
     driver.switchTo().newWindow(WindowType.WINDOW);    //switchTo() ile diğer sayfaya geçiyor, newWindow() ile yeni boş sayfa açıyor.
-    driver.get("https://www.amazon.com");
+    driver.get("https://www.amazon.com");              // then we go to the web page.
 
 
 //        Get the title of the page

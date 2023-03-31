@@ -37,7 +37,7 @@ And
         //perform() method is must to use to execute the action.
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).build().perform();
 
-        //Scroll down with "ARROW_DOWN" key ==> ARROW_DOWN scrolls down less than PAGE_DOWN
+        //Scroll down with "ARROW_DOWN" key ==> ARROW_DOWN scrolls down less than PAGE_DOWN (a little bit down)
         Thread.sleep(2000);
         actions.sendKeys(Keys.ARROW_DOWN).perform();
 

@@ -1,5 +1,6 @@
 package practices.practice01;
 
+import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,7 +17,7 @@ public class Q01 {
     // Close/Quit the browser
     // And last step : print "ALL OK" on console
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws SessionNotCreatedException {
         //...Practice 1...
         // Set Driver Path
         //System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
@@ -34,7 +35,7 @@ public class Q01 {
         driver.navigate().to("https://techproeducation.com/");
 
         // Navigate back to google
-        Thread.sleep(100);
+
         driver.navigate().back();
 
         // Navigate forward to techproeducation

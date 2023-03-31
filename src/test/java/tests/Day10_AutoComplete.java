@@ -27,7 +27,7 @@ public class Day10_AutoComplete extends TestBase {
         //    Then verify the result contains ‘United Kingdom’
         Assert.assertTrue(driver.findElement(By.id("result")).getText().contains("United Kingdom"));
 
-        //    Then verify the result contains ‘United Kingdom’
+
 
     }
     @Test

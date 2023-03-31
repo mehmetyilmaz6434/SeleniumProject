@@ -41,15 +41,18 @@ TEST DATA : username, password, URL, test environment, city, ssn,...
         String city=faker.address().city();
         System.out.println(city);
 
-        // State
+//        full address
         String fullAddress=faker.address().fullAddress();
         System.out.println(fullAddress);
 
-        //cell phone
+//        state
+        String state=faker.address().state();
+        System.out.println(state);
+//        cell phone
         String cellPhone=faker.phoneNumber().cellPhone();
         System.out.println(cellPhone);
 
-        //email
+//        email
         String email=faker.internet().emailAddress();
         System.out.println(email);
 

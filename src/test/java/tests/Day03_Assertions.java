@@ -17,7 +17,7 @@ public class Day03_Assertions {
     -expected != actual ==> FAIL
 
     -------------
-    assertEquals("expected" , "actual") --> If expected is equal to actual, it will PASS otherwise it will FAIL.
+    assertEquals("expected" , "actual") --> If expected  equals to actual, it will PASS otherwise it will FAIL.
 
     assertTrue(true)=> PASS
     assertTrue(false)=> FAIL

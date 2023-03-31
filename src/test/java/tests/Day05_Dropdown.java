@@ -62,7 +62,8 @@ public class Day05_Dropdown {
     public void printAllTest(){
         WebElement dropdown = driver.findElement(By.id("dropdown"));
         Select select = new Select(dropdown);
-//        getOptions(); returns all of the dropdown options
+
+//        getOptions(); returns all of the dropdown options to string in a list.
         List<WebElement> allOptions = select.getOptions();
         for (WebElement eachOption : allOptions){
 //            getText() returns the TEXT of the webelements as STRING

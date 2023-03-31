@@ -2,10 +2,10 @@ package Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
+
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
@@ -17,7 +17,7 @@ import java.time.Duration;
 import java.util.Date;
 
 public abstract class TestBase {  //Testbase testbase=mew testbase(); abstract ile bu objeyi oluşturmaya ihtiyaç duymuyoruz.
-    protected static WebDriver driver;//we use protected because default access modifier can not be seen from another package.
+    protected WebDriver driver;//we use protected because default access modifier can not be seen from another package.
     @Before
     public  void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -37,7 +37,7 @@ public abstract class TestBase {  //Testbase testbase=mew testbase(); abstract i
     //    NOTE: THIS REUSABLE METHOD DESIGNED FOR OUR CURRENT PROJECT. THIS MAY NOT WORK FOR NEW PROJECTS, BUT CAN BE MODIFIED AND USED FOR THAT NEW PROJECT
     //    NOTE: YOU WILL SEE THIS KIND OF REUSABLE METHOD THAT IS SPECIFIC TO YOUR OWN PROJECT
     //    THE POINT OF REUSABLE METHOD IS : WRITE ONCE USE MULTIPLE TIMES TO SAVE TIME AND SHORT TEST CLASS
-    public static void searchAndSelectFromList(String keyword, String textFromList) throws InterruptedException {
+    public void searchAndSelectFromList(String keyword, String textFromList) throws InterruptedException {
         //searchAndSelectFromList('uni','United Kingdom');
 
         Thread.sleep(2000);
@@ -56,7 +56,7 @@ public abstract class TestBase {  //Testbase testbase=mew testbase(); abstract i
 
     }
     //    TAKE SCREENSHOT OF ENTIRE PAGE WITH THIS REUSABLE METHOD
-    public static void takeScreenshotOfPage() throws IOException {
+    public  void takeScreenshotOfPage() throws IOException {
         // 1. Take screenshot using getScreenshotAs method and TakeScreenshot API-coming from selenium
         File image=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
@@ -179,26 +179,26 @@ public abstract class TestBase {  //Testbase testbase=mew testbase(); abstract i
 
     //-----------Expilicit Waits----------
 
-    public static WebElement waitForVisibility(WebElement element,int durationOfSec){
+    public  WebElement waitForVisibility(WebElement element,int durationOfSec){
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(durationOfSec));
         WebElement helloWorld=wait.until(ExpectedConditions.visibilityOf(element));
         return  helloWorld;
 
     }
-    public static WebElement waitForVisibility(By locator, int timeout) {
+    public  WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-    public static WebElement waitForClickablility(WebElement element, int timeout) {
+    public  WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-    public static WebElement waitForClickablility(By locator, int timeout) {
+    public  WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
     //Hard Wait with loop
-    public static void clickWithTimeOut(WebElement element, int timeout) {
+    public  void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
                 element.click();
@@ -210,7 +210,7 @@ public abstract class TestBase {  //Testbase testbase=mew testbase(); abstract i
     }
     //-----------Fluent Wait-----------
     //@params: String xPath of web element, int total time of wait, int polling every period
-    public static WebElement fluentWait(String xpath,int withTimeout,int pollingEvery){
+    public WebElement fluentWait(String xpath,int withTimeout,int pollingEvery){
         Wait<WebDriver> wait=new FluentWait<>(driver).
                 withTimeout(Duration.ofSeconds(withTimeout)).//Total Wait
                         pollingEvery(Duration.ofSeconds(pollingEvery)).//Checking Period of Web Element==>Ths will check the web element in each 2 secs.
@@ -222,7 +222,7 @@ public abstract class TestBase {  //Testbase testbase=mew testbase(); abstract i
 
     }
     //    This can be used when a new page opens
-    public static void waitForPageToLoad(long timeout) {
+    public  void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
